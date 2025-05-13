@@ -104,7 +104,7 @@ int16_t LTC2326_16::read()
 {
     int16_t val;
 
-    SPI.beginTransaction(SPISettings(24000000, MSBFIRST, SPI_MODE1));
+    SPI.beginTransaction(SPISettings(24000000, MSBFIRST, SPI_MODE2));
     digitalWriteFast(_cnv, LOW); // Reset CNV for another conversion later on
     digitalWriteFast(_cs, LOW); // Set CS low to start SPI transaction
     SPI.transfer16(0x0000); // Send dummy data to read the ADC data register
